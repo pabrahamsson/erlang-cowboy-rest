@@ -1,0 +1,6 @@
+-sname erlang-cowboy-rest
+
+-setcookie erlang-cowboy-rest_cookie
+
++K true
++A30
