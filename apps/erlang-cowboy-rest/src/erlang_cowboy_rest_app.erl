@@ -24,7 +24,7 @@ start(_StartType, _StartArgs) ->
     } ],
     Dispatch = cowboy_router:compile(Routes),
     NumAcceptors = 10,
-    TransOpts = [ {ip, {0,0,0,0}}, {port, 2938} ],
+    TransOpts = [ {ip, {0,0,0,0}}, {port, 8080} ],
     ProtoOpts = #{env => #{dispatch => Dispatch}},
     {ok, _} = cowboy:start_clear(my_http_listener,
         TransOpts,
