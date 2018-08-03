@@ -10,7 +10,7 @@ objects:
     labels:
       app: "${NAME}"
       template: "${NAME}"
-    name: erlang-cowboy-rest
+    name: "${NAME}"
   spec:
     ports:
     - name: 8080-tcp
