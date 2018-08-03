@@ -1,0 +1,27 @@
+apiVersion: v1
+kind: Template
+metadata:
+  name: svc-template
+objects:
+- apiVersion: v1
+  kind: Service
+  metadata:
+    annotations:
+    labels:
+      app: "${NAME}"
+      template: "${NAME}"
+    name: erlang-cowboy-rest
+  spec:
+    ports:
+    - name: 8080-tcp
+      port: 8080
+      protocol: TCP
+      targetPort: 8080
+    selector:
+      app: "${NAME}"
+    sessionAffinity: None
+    type: ClusterIP
+parameters:
+- description: A name for the service
+  name: NAME
+  value: foobar
